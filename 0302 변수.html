@@ -7,6 +7,9 @@
     <title>Document</title>
   </head>
   <body>
+    <h1 id="title">id를 통해 내용을 작성합니다</h1>
+    <input type="text" id="input" value="안녕" name="text" />
+
     <!-- 자바스크립트 -->
     <script>
       //변수는 값을 담아서 저장할수 있다
@@ -18,6 +21,58 @@
 
       // 변수 이름을 통해서 값을 꺼내서 사용할 수 있다
       console.log(num + 10);
+
+      //복합대입연산자
+      let numOper = 0;
+      // 현재 변수에 1을 더해줄때
+      numOper = numOper + 1; // numOper : 1
+      console.log(numOper);
+      //복합 대입연산자를 이용하여 1더해줌
+      numOper += 1; //numOper : 2
+      console.log(numOper);
+
+      numOper *= 3;
+      console.log(numOper);
+
+      // 증감연산자 : 1씩 감소, 증가할때 사용
+      numOper++;
+      console.log(numOper);
+
+      // 후위연산자 : 가장 마지막에 계산
+      // 실행순서 : console.log(), numOper++
+      console.log(numOper++);
+      console.log(numOper);
+
+      // 전위 연산자 : 가장 처음에 계산
+      // 실행순서 : ++numOper, console.log()
+      console.log(++numOper);
+      console.log(numOper);
+
+      // 일반 게산식과 함꼐 사용할때도 가장 먼저
+      console.log(++numOper / 5);
+      // 복합대입연산자와 증감연산자 실습
+      let sumNum = 0;
+      sumNum += 1;
+      sumNum++;
+      console.log("sumNum: ", sumNum);
+      sumNum -= 1;
+      sumNum--;
+      console.log("sumNum: ", sumNum);
+
+      // 콘솔 또는 HTML에 출력하기 위한 명령어
+      console.log("콘솔에 내용을 출력합니다");
+      alert("경고창에 내용출력");
+      document.getElementById("title").innerHTML =
+        "id를 통해 태그를 찾고 값을 할당할 수 있다";
+
+      // 값을 입력하는 방법
+      // 창을 띄워서 값 가져오기
+      let name = prompt("이름을 입력하세요");
+      alert(name);
+
+      // id를 통해서 input 태그에 있는 value 값 가져오기
+      let inputValue = document.getElementById("input").value;
+      console.log(inputValue);
     </script>
   </body>
 </html>
