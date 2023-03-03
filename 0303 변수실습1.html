@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--1번문제 <h1 id="greeting"></h1>
+    <h3>홈페이지에 방문하신 것을 환영합니다.</h3>-->
+
+    <!--2번문제 <h4 id="age"></h4> -->
+
+    <h1>점수결과 입니다</h1>
+    <h4 id="result"></h4>
+
+    <script>
+      /*1번문제 let nickname = prompt("닉네임을 입력해주세요", "닉네임");
+      document.querySelector("#greeting").innerHTML =
+        nickname + "님 오신것을 환영합니다.";
+      id="greeting"의 형제인 p태그 찾기
+      document.querySelector("#greeting+p").innerHTML = "greeting+p";*/
+
+      //prompt로 받아온 값은 문자열, 계산할때 주의
+      /*2번문제 let birthYear = prompt("현재 생년을 입력해주세요", "YYYY");
+      let currentYear = 2023;
+      // 뺴기를 했을땐 문자열을 자동으로 숫자로 바꿔주지만 더하기를 했을땐 문자를 이어줘버린다(자동형 변환)
+      let age = currentYear - birthYear + 1;
+      document.querySelector("#age").innerHTML = `현재 나이는 ${age}세입니다`;
+      console.log(isNaN(age));*/
+
+      let score = prompt("점수를 입력해주세요", "0");
+      let result = score >= 60;
+      document.querySelector("#result").innerHTML = result;
+    </script>
+  </body>
+</html>
