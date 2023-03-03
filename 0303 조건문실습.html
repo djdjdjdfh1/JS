@@ -90,6 +90,64 @@
       } else {
         document.write("<p>매우나쁨</p>");
       }
+
+      //if else if연습
+      //1.변수 : mathScore
+      //2. 조건식/참 :
+      // 90점이상 A/ 80점이상 B/ 70점이상 C/ 그 이하의 점수 F
+      let mathScore = 80;
+      if (mathScore >= 90) {
+        document.write("<p>A입니다</p>");
+      } else if (mathScore >= 80) {
+        document.write("<p>B입니다</p>");
+      } else if (mathScore >= 70) {
+        document.write("<p>C입니다</p>");
+      } else {
+        document.write("<p>F입니다</p>");
+      }
+      //if문만 사용
+      if (mathScore >= 90) {
+        document.write("<p>A입니다</p>");
+      }
+      // 두 값의 범위가 참일때 출력
+      if (mathScore >= 80 && mathScore < 90) {
+        document.write("<p>B입니다</p>");
+      }
+      if (mathScore >= 70 && mathScore < 80) {
+        document.write("<p>C입니다</p>");
+      }
+      document.write("<p><hr></p>");
+
+      //조건문 연습
+      let num = 30;
+      if (num % 2 == 0) {
+        document.write("<p>짝수</p>");
+      } else {
+        document.write("<p>홀수</p>");
+      }
+      //음수, 양수, 0
+      let number = -12;
+      if (number > 0) {
+        document.write("<p>양수</p>");
+      } else if (number < 0) {
+        document.write("<p>음수</p>");
+      } else {
+        document.write("<p>0</p>");
+      }
+      //구매한 가격 입력 할인율 출력
+      //1만원 이상 5%할인 : pay - 0.05*pay
+      //5만원 이상 10%할인 : pay - 0.1*pay
+      //10만원 이상 20%할인 : pay - 0.2*pay
+      let price = 8000;
+      if (price >= 100000) {
+        document.write(`<p>할인금액 :${price - price * 0.2}</p>`);
+      } else if (price >= 50000) {
+        document.write(`<p>할인금액 :${price - price * 0.1}</p>`);
+      } else if (price >= 10000) {
+        document.write(`<p>할인금액: ${price - price * 0.05}</p>`);
+      } else {
+        document.write(`<p>할인없음: ${price}</p>`);
+      }
     </script>
   </body>
 </html>
