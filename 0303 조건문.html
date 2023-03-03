@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //조건문 : 조건에 따라서 문장이 달라진다
+      // 참(true)만 있는 조건문
+      if (true) {
+        console.log("이 조건문은 참입니다");
+        document.write("<h1>이 조건문은 참입니다</h1>");
+      }
+      document.write("<p>if문에 상관없이 실행되는 내용입니다</p>");
+      // 조건문에서 조건식이 중요하다
+      // 조건식 : 계산결과 boolean 값으로 출력
+      let num = "문자";
+      if (isNaN(num)) {
+        document.write("<p>" + "값이 NaN입니다" + "</p>");
+      }
+
+      //1. 문제안에 조건문을 사용하는지 확인
+      //2. 조건식 학인(비교, 참거짓)
+      //3. 참일때 실행할 문장
+      let score = 70; //문제안에서 변할수 있는 값
+      if (score >= 60) {
+        document.write("<p>합격입니다</p>");
+      }
+    </script>
+  </body>
+</html>
