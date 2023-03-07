@@ -9,13 +9,13 @@
   <body>
     <script>
       for (let i = 10; i > 0; i--) {
-        document.write(`<p>${i}</p>`);
+        document.write(`<span>${i} </span>`);
       }
       /*for (let i = 0; i < 10; i++) {
         document.write(`<p>${10 - i}</p>`);
       }*/
       for (let i = 1; i < 10; i++) {
-        document.write(`<p>2 X ${i} = ${2 * i}</p>`);
+        document.write(`<span>2 X ${i} = ${2 * i} </span>`);
       }
 
       document.write("<hr>");
@@ -47,19 +47,107 @@
       let scores = [55, 70, 82, 65, 58];
       for (let i in scores) {
         if (scores[i] >= 60) {
-          document.write(`<p>${scores[i]}점, 합격입니다</p>`);
+          document.write(`<span>${scores[i]}점, 합격입니다 </span>`);
         } else {
-          document.write(`<p>${scores[i]}점, 불합격입니다</p>`);
+          document.write(`<span>${scores[i]}점, 불합격입니다 </span>`);
         }
       }
 
       for (let score of scores) {
         if (score >= 60) {
-          document.write(`<p>${score}점, 합격입니다</p>`);
+          document.write(`<span>${score}점, 합격입니다 </span>`);
         } else {
-          document.write(`<p>${score}점, 불합격입니다</p>`);
+          document.write(`<span>${score}점, 불합격입니다 </span>`);
         }
       }
+      document.write("<hr>");
+      // 반복문과 조건문 실습
+      // 1~100까지 짝수만 출력하세요
+      for (let i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          document.write(`<span>${i} </span>`);
+        }
+      }
+      // if문을 쓰지않고 증감식의 값을 바꿔서 출력
+      for (let i = 2; i <= 100; i += 2) {
+        document.write(`<span>${i} </span>`);
+      }
+      document.write("<hr>");
+      // 1~50까지 7의 배수만 출력하세요
+      for (let i = 1; i <= 50; i++) {
+        if (i % 7 == 0) {
+          document.write(`<span>${i}  </span>`);
+        }
+      }
+      for (let i = 7; i <= 50; i += 7) {
+        document.write(`<span>${i} </span>`);
+      }
+      document.write("<br>");
+      // 중첩반복문
+      // for문안에 for문 사용
+      for (let i = 0; i < 3; i++) {
+        //document.write(`<p>${i} </p>`);
+        for (let j = 0; j < 2; j++) {
+          document.write(`<span>(i:${i}),(j:${j}) </span>`);
+        }
+        document.write("<br>");
+      }
+      // 중첩배열
+      let array = [
+        [1, 2],
+        [3, 4],
+        [5, 6],
+      ]; // 중첩배열을 사용할때, 바깥배열의 요소의 인덱스를 확인
+      // 안쪽 배열의 요소를 인덱스를 확인하여 값을 가져올수 있다
+
+      // 중첩배열과 반복문
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 2; j++) {
+          document.write(`<span>${array[i][j]} </span>`);
+        }
+        document.write("<br>");
+      }
+      // 중첩반복문 실습 - 구구단
+      for (let i = 2; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+          document.write(`<span>${i}X${j}=${i * j} </span>`);
+        }
+        document.write("<br>");
+      }
+      document.write("<hr>");
+
+      // for문 연습
+      let jsScores = [60, 70, 80, 90, 40, 70, 70];
+      let jsSum = 0;
+      for (let i in jsScores) {
+        jsSum += jsScores[i]; // jsSum = jsSum + jsScores[i];
+      }
+      document.write(`<p>${jsSum / jsScores.length}</p>`);
+
+      let sum = 0;
+      for (let i = 1; i <= 100; i += 2) {
+        sum += i;
+      }
+      document.write(`<p>${sum}</p>`);
+
+      let sumOr = 0;
+      for (let i = 1; i <= 100; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+          sumOr += i;
+        }
+      }
+      document.write(`<p>${sumOr}</p>`);
+
+      let sum2 = 0;
+      for (let i = 1; i <= 100; i++) {
+        if (i % 3 == 0) {
+          //console.log(i)
+          sum2 += i;
+        } else if (i % 5 == 0) {
+          sum2 += i;
+        }
+      }
+      document.write(`<p>${sum2}</p>`);
     </script>
   </body>
 </html>
