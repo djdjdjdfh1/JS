@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // break - 반복문을 빠져나가는 명령어
+      while (true) {
+        document.write("<p>무한루프에 빠졌습니다</p>");
+        // 반복문에 break 만나자마자 반복문을 빠져나옴
+        break;
+      }
+
+      // while(true)와 break를 같이 쓰는 방법
+      // if문을 통해서 조건이 참일때 break통해서 반복빠져나옴
+
+      // while(true)와 break를 통해서 3번 반복하기
+      let num = 0;
+      while (true) {
+        num++;
+        document.write("<p>세번 반복합니다</p>");
+        if (num == 3) {
+          break;
+        }
+      }
+      // 비밀번호가 맞을 때(if) 반복을 멈추는 내용
+      let password = "";
+      while (true) {
+        password = prompt("비밀번호를 입력하세요");
+        if (password == "000") {
+          break;
+        }
+      }
+      // continue : continue를 만나면 다시 반복 위치로 돌아간다
+      let num1 = 1;
+      while (num1 < 10) {
+        num1++;
+        document.write(`<span>${num1} </span>`);
+        continue; // 컨티뉴 이후 내용은 실행x
+        document.write("<p>continue 뒤에 있는 내용</p>");
+      }
+      let num2 = 0;
+      while (num2 < 5) {
+        num2++;
+        if (num2 % 2 == 1) {
+          // 홀수일 경우에는 아래 코드 실행x
+          continue;
+        }
+        // 짝수만 출력
+        document.write(`<p>${num2}</p>`);
+      }
+
+      // for문 안에 사용되는 continue
+      for (let i = 0; i < 5; i++) {
+        // 홀수 if - continue
+        if (i % 2 == 1) {
+          continue;
+        }
+        // 짝수 출력
+        document.write(`<p>${i}</p>`);
+      }
+
+      // break문과 continue문 실습
+      let number = 1;
+      while (true) {
+        document.write(`<span>${number} </span>`);
+        if (number == 10) {
+          break;
+        }
+        number++;
+      }
+      document.write("<br>");
+      // continue를 이용하여 3의배수 출력x
+      for (let i = 1; i <= 10; i++) {
+        if (i % 3 == 0) {
+          continue;
+        }
+        document.write(`<span>${i} </span>`);
+      }
+    </script>
+  </body>
+</html>
