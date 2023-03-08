@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 1번째
+      function introName(name) {
+        document.write(`<p>안녕하세요 ${name}입니다. 반갑습니다<p>`);
+        print(`안녕하세요 ${name}입니다 1번째`);
+      }
+      // 값을 입력했을때 document.write(`<p></p>`);
+      function print(string) {
+        document.write(`<p>${string}</p>`);
+      }
+      // 2번째
+      function introNameReturn(name) {
+        return `안녕하세요 ${name}입니다. 반갑습니다. 2번째`;
+      }
+      // 3번째
+      function introNameReturnLog(name) {
+        console.log("함수가 출력되었습니다");
+        return "<p>안녕하세요 " + name + "입니다. 반갑습니다. 3번째<p>";
+      }
+      // 4번째
+      function area(num1, num2) {
+        let result = num1 * num2;
+        return "사각형의 넓이: " + result;
+      }
+      // 5번째
+      /*
+      let numArray = [60, 30, 20, 50, 60];
+      let avrgResult; 평균값
+      let sum 0;
+      for(let num of numArray) {
+        sum += num;
+      }
+      print(sum);
+      */
+      function avrg(array) {
+        let sum = 0;
+        let result = 0;
+        for (let i in array) {
+          sum += array[i];
+        }
+        result = sum / array.length;
+        return result;
+      }
+      // 6번째
+      /* 
+      let num1 = 5;
+      let num2;
+      console.log(num1+num2);
+      if(num2 == undefined) {
+        num2 == 0;
+      }
+      console.log(num1+num2);
+      */
+      // num2 == num2 ? num2 : 0;
+      function add(num1, num2) {
+        let result = num2 == undefined ? num1 + 0 : num1 + num2;
+        /*if (num1 == undefined) {
+          num1 = 0;
+        } else if (num2 == undefined) {
+          num2 = 0;
+        }
+        let result = num1 + num2;*/
+        return `${result}입니다 `;
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      // 함수 안쪽 내용을 먼저 실행
+      introName("홍길동");
+      // 가장 안쪽()에 있는 내용부터 실행이 된다
+      print(introNameReturn("홍길동"));
+      print(introNameReturnLog("홍길동"));
+      print(area(5, 10));
+      print(area(4, 5));
+      // 5번째
+      let numArray = [30, 60, 40, 60, 20];
+      print(avrg(numArray));
+
+      // 초과된 인수와 부족한 인수
+      introName(); // 넣어주지 않은 값은 undefined
+      // 초과된 값은 사용하지 않는다
+      introName("홍길동", "장발장");
+
+      //6번째
+      document.write(add(5));
+      document.write(add(5, 20));
+    </script>
+  </body>
+</html>
