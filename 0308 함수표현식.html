@@ -34,6 +34,35 @@
       }
       // print(i); i는 for문에서만 사용
       // hello(); hello는 for문에서만 사용
+
+      /* 함수표현식 실습 */
+      let sub = function (num1, num2) {
+        return num1 - num2;
+      };
+      document.write(`<p>${sub(5, 10)}</p>`);
+      // hoisting : 이전에 선언된 함수를 미리 위로 끌어올리는 것.
+      // 명시적 함수는 끌어올리지만 함수 표현식은 선언된 것이 아닌 변수에 할당되어지기 때문에 미리 올라가지 않는다
+
+      // 숫자를 넣었을때 홀수인지 짝수인지 알려주는 함수표현식
+      // 함수표현식 작성 : oddEvenCheck
+      // oddEvenCheck(3) > return "홀수"
+      // oddEvenCheck(3) > return "짝수"
+      let oddEvenCheck = function (num) {
+        if (num % 2 == 1) {
+          // return을 만나면 함수를 빠져나옴
+          return "홀수";
+        } else {
+          return "짝수";
+        }
+        // 삼항연산자를 사용한 홀수 짝수
+        let oddEvenCheckOper = function (num) {
+          return num % 2 == 0 ? "짝수" : "홀수";
+        };
+        // 출력되지 않음
+        document.write("함수 끝");
+      };
+      document.write(oddEvenCheck(3));
+      document.write(oddEvenCheck(6));
     </script>
   </body>
 </html>
