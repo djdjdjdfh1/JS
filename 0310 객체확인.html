@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* 객체 : 속성값(변수)과 메소드(함수)를 가지고 있는 자료형(변수에 저장해서 사용) */
+      // document의 자료형 : 객체(object)
+      document.write(typeof document);
+      let puppy = {
+        // 속성
+        name: "초코",
+        // 메서드
+        eat: function () {
+          document.write("<p>밥을 먹습니다</p>");
+        },
+      };
+      document.write(`<p>${puppy.name}</p>`);
+      document.write(`<p>${puppy["name"]}</p>`);
+      document.write(`<p>${puppy.eat()}</p>`); //undefined 값이 나온것은 return이 실행됐기때문
+      puppy.eat();
+
+      // 리터럴 표기를 이용한 객체 생성 실습
+      let person = {
+        // 속성
+        name: "홍길동",
+        address: "부산",
+        intro: function () {
+          return `${this.name}입니다. ${this.address}에 거주중입니다`;
+        },
+      };
+      person.intro();
+
+      // 리터럴 표기를 이용한 객체 생성 실습 2
+      let myCookie = {
+        shape: "원",
+        flavor: "초코",
+        intro: function () {
+          // this는 자기자신의 객체를 가져온다
+          return `${this.shape}모양의 ${this.flavor}맛입니다`;
+        },
+        count: function (number) {
+          return `${number}개 있습니다`;
+        },
+      };
+      myCookie.intro();
+
+      /* 생성자 함수 : 객체의 값을  받아와서 객체를 만드는 함수 */
+      function Dog(color, name, age) {
+        // 객체의 속성할당
+        this.color = color;
+        this.name = name;
+        this.age = age;
+        // 메소드 작성
+        this.eat = function () {
+          return `${this.name}는 밥을 먹습니다`;
+        };
+      }
+      let dog1 = new Dog("흰색", "백구", 1);
+      // 없는 속성에 접근해도 오류가 발생하지않고 undefined 출력
+      console.log(dog1.family);
+      // 없는 속성에 값을 넣어주면  그 값이 할당되어 사용할 수 있다
+      dog1.family = "진돗개";
+      console.log(dog1.family);
+    </script>
+  </body>
+</html>
