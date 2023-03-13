@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Product(name, pay) {
+        this.name = name;
+        this.pay = pay;
+        this.keep = function () {
+          return this.name + "을 보관했습니다";
+        };
+        this.getPay = function () {
+          return this.pay;
+        };
+      }
+      let productBook = new Product("book", 6000);
+      let productPencil = new Product("pencil", 2000);
+      let productHat = new Product("hat", 8000);
+
+      function User(id, money) {
+        this.id = id;
+        this.money = money;
+        this.buyList = [];
+        this.charge = function (plusMoney) {
+          return (this.money += plusMoney);
+        };
+        this.buy = function (products) {
+          if (products.pay > this.money) {
+            return "잔액이 부족합니다";
+          } else {
+            this.buyList.push(products.name);
+            return (this.money -= products.getPay());
+          }
+        };
+      }
+      let harry = new User("harry", 10000);
+    </script>
+  </body>
+</html>
