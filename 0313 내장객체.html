@@ -162,6 +162,26 @@
       // 메소드를 사용할 수 없지만 객체의 메소드를 사용하기 위해
       // 자바스크립트에서 메소드를 사용하기전에 객체로 만들어서
       // 메소드에 접근한다
+
+      // 배열 객체
+      // toString : 객체에 담은 변수이름을 호출했을때 나오는 내용과 동일
+      let arrayString = [1, 2, 3, 4];
+      // 객체의 이름으로 작성했을때 출력하고 싶은 내용 수정
+      arrayString.toString = function () {
+        return "배열";
+      };
+
+      document.write(`<p>${arrayString.toString()}</p>`);
+      let object = {
+        name: "객체",
+        value: "값",
+        // toString 메소드를 작성하면 객체의 변수이름을 작성했을때
+        // 출력할 내용을 정할수 있다
+        toString: function () {
+          return this.value;
+        },
+      };
+      document.write(`<p>${object}</p>`);
     </script>
   </body>
 </html>
