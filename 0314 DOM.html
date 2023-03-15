@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./css/0315 DOM실습파일.css" />
   </head>
   <body>
     <!-- 아래의 태그에 접근해서 내용 값 바꾸기 -->
@@ -32,6 +33,9 @@
       <li>요소</li>
       텍스트
     </ul>
+
+    <!-- 클래스 추가제거 -->
+    <h2 class="blue-color">클래스가 추가되면 파란색이 됩니다</h2>
     <script>
       /* DOM : 도큐먼트 오브젝트 모델 : 문서객체 모델 */
       // html의 요소를 객체로 선택하거나 생성
@@ -203,6 +207,13 @@
       body.appendChild(p.cloneNode(true));
       // 변수에 할당하지 않고 추가하면 자바스크립트에서 제어할 수 없다
       // 다시 document.querySelector를 통해 가져와서 제어할 수 있다
+
+      // DOM 객체 속성중 classList
+      // 각 요소의 클래스를 추가 제거 가능
+      let h2 = document.querySelector(".blue-color");
+      h2.classList.remove("blue-color"); // 삭제
+      h2.classList.add("blue-color", "hi", "hello"); // 추가 ,통해서 여러개 추가
+      //h2.classList.toggle("blue-color"); // 토글
     </script>
   </body>
 </html>
