@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title" class="title">HTML태그와 DOM객체</h1>
+    <img class="img" alt="배경" />
+    <form id="form" action="">
+      <a href="https://unsplash.com/ko" target="_blank"
+        >언스플래쉬에서 가져온 이미지입니다</a
+      >
+      <br />
+
+      <p>이름을 입력해 주세요</p>
+      <input id="input" type="text" required />
+      <br />
+
+      <input type="radio" name="gender" id="radio1" value="female" /><span
+        >여성</span
+      >
+      <input type="radio" name="gender" id="radio1" value="male" /><span
+        >남성</span
+      >
+      <br />
+
+      <p>좋아하는 과일을 중복해서 고르세요</p>
+      <input
+        id="checkbox1"
+        type="checkbox"
+        name="fruit"
+        value="apple"
+        checked
+      />
+      <span>사과</span>
+      <input id="checkbox2" type="checkbox" name="fruit" value="orange" />
+      <span>오렌지</span>
+      <input id="checkbox3" type="checkbox" name="fruit" value="strawberry" />
+      <span>딸기</span>
+      <input id="checkbox4" type="checkbox" name="fruit" value="peach" />
+      <span>복숭아</span>
+      <br />
+
+      <input id="date" type="date" min="2023-03-16" />
+      <br />
+
+      <input id="submit" type="submit" value="제출" />
+    </form>
+
+    <button id="btn2" onclick="printTest()">버튼 클릭 글자바뀜</button>
+
+    <p id="p3" onmouseenter="changeColor()" onmouseleave="changeColor()">
+      마우스를 올리면 글자가 빨간색으로, 마우스가 빠져나가면 파란색으로 바뀝니다
+    </p>
+    <script>
+      let btn2 = document.querySelector("#btn2");
+      function printTest() {
+        btn2.innerHTML = "바뀜";
+      }
+
+      let p3 = document.querySelector("#p3");
+      console.log(p3);
+
+      function changeColor() {
+        if (p3.style.color != "red") {
+          p3.style.color = "red";
+        } else {
+          p3.style.color = "blue";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -48,19 +48,16 @@
       // ol.firstElementChild.nextElementSibling.remove();
       ol.lastElementChild.remove();
 
-      // let p = span.parentNode;
-      // main.append(p.cloneNode(true));
-      // main.append(p.cloneNode(true));
+      let span = document.querySelector(".main span");
+      span.style.color = "red";
+      let p = span.parentNode;
       let main = document.querySelector(".main");
-      let mainP = main.firstElementChild.cloneNode(true);
-      let mainP2 = main.firstElementChild.cloneNode(true);
-      main.appendChild(mainP);
-      main.appendChild(mainP2);
-
-      let span = document.querySelectorAll(".main>p>span");
-      for (let i = 0; i < span.length; i++) {
-        span[i].style.color = "red";
-      }
+      main.append(p.cloneNode(true));
+      main.append(p.cloneNode(true));
+      //let mainP = main.firstElementChild.cloneNode(true);
+      //let mainP2 = main.firstElementChild.cloneNode(true);
+      //main.appendChild(mainP);
+      //main.appendChild(mainP2);
     </script>
   </body>
 </html>
