@@ -16,6 +16,24 @@
     <input type="text" size="10" placeholder="값 입력" />
     <button onclick="inputValue()">확인</button>
     <p id="p"></p>
+    <input id="onFocus" type="text" onfocus="a()" onblur="b()" />
+    <button>확인</button>
+
+    <!-- JS에 DOM으로 들고와서 메소드로 이벤트 추가-->
+    <button id="btn">이벤트리스너</button>
+    <!-- -->
+    <p id="p2">마우스를 올리면 빨간색으로 바뀌는 이벤트</p>
+    <ul id="ullist">
+      <li>첫번째</li>
+      <li>두번째</li>
+      <li>세번째</li>
+    </ul>
+
+    <!-- 이벤트 객체를 사용하기 위한 태그 -->
+    <p onclick="printText()">태그를 클릭하면 글자가 바뀝니다</p>
+    <!-- 동일한 이벤트와 함수를 연결 -->
+    <p id="p3">태그를 클릭하면 글자가 바뀝니다</p>
+
     <script>
       // HTML 태그에서 이벤트가 발생했을 때 실행할 내용 작성
       // 함수로 만들어서 onclick 이벤트에 전달
@@ -45,6 +63,61 @@
         button.style.color = "black";
       } else {
         button.style.color = "red";
+      }
+      // 요소의 속성으로 등록하는 방법 실습
+      let onFocus = document.querySelector("#onFocus");
+      function a() {
+        onFocus.style.backgroundColor = "gray";
+      }
+      function b() {
+        onFocus.style.backgroundColor = "";
+      }
+
+      // 이벤트 리스너
+      let btn = document.querySelector("#btn");
+      // 가져온 DOM요소에 이벤트와 실행할 함수
+      btn.addEventListener("click", printButton);
+      // 가져온 DOM요소에 이벤트와 실행할 익명함수
+      btn.addEventListener("mouseenter", function () {
+        btn.innerHTML = "익명함수로 버튼을 바꿨습니다";
+      });
+      // 실행할 함수 작성
+      function printButton() {
+        btn.innerHTML = "버튼을 눌렀습니다";
+      }
+      // let과 달리 const로 작성한 변수는 그 값을 재할당 할 수 없음
+      // 유일값
+      const p2 = document.querySelector("#p2");
+      p2.addEventListener("mouseenter", function (e) {
+        p2.style.color = "red";
+        // 이벤트객체들고와서 백그라운드컬러gray
+        e.target.style.backgroundColor = "gray";
+      });
+
+      // li와 같이 여러개의 태그에 같은 이벤트 추가
+      // 배열(querySelectorAll)로 들고와서 for문
+      const liList = document.querySelectorAll("#ullist>li");
+      console.log(liList[0]);
+      for (let i = 0; i < liList.length; i++) {
+        liList[i].addEventListener("click", function () {
+          // 랜덤하게 색이 바뀜
+          // 색이 바뀜 : style.color
+          // 랜덤(무작위) : Math.random() : 0~1 소수의 난수
+          // 랜덤 숫자 : 0~255가 나와야함 : Math.random*255(정수)
+          // 정수로 사용하기위해 Math.floor()
+          let r = Math.floor(Math.random() * 256);
+          let g = Math.floor(Math.random() * 256);
+          let b = Math.floor(Math.random() * 256);
+          liList[i].style.color = `rgb(${r}, ${g}, ${b})`;
+        });
+      }
+
+      /* 이벤트 객체를 활용한 함수 작성 */
+      let p3 = document.querySelector("#p3");
+      p3.addEventListener("click", printText);
+      function printText(e) {
+        e.target.innerHTML = "값이 바뀝니다";
+        console.dir(event);
       }
     </script>
   </body>

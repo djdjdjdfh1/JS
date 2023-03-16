@@ -1,0 +1,16 @@
+.h2 {
+    text-align: center;
+}
+.workout {
+    display: flex;
+    justify-content: space-around;
+}
+.workout>.chest,.back,.shoulder {
+    display: inline-block;
+    text-align: center;
+    background-color: lightgray;
+    border-radius: 4px;
+}
+.none {
+    display: none;
+}
