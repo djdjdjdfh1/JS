@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./css/운동일지.css" />
-    <script src="./js/운동일지.js"></script>
   </head>
   <body>
     <header>
@@ -24,7 +23,7 @@
       <!-- 마진오토가 안먹힘 -->
       <h3>오늘의 운동</h3>
       <!-- 네모칸은 같은위치에, 텍스트는 왼쪽정렬하고싶음 -->
-      <form id="routineChest" action="">
+      <form id="routineChest" class="none" action="">
         <label for="">벤치프레스</label>
         <input type="number" min="0" /> kg <br />
         <label for="">덤벨프레스</label>
@@ -36,8 +35,8 @@
         <label for="">트라이셉스 케이블</label>
         <input type="number" min="0" /> kg
       </form>
-      <br />
-      <form id="routineBack" action="">
+
+      <form id="routineBack" class="none" action="">
         <label for="">데드리프트</label>
         <input type="number" min="0" /> kg <br />
         <label for="">투암로우</label>
@@ -49,8 +48,13 @@
         <label for="">바벨로우 머신</label>
         <input type="number" min="0" /> kg
       </form>
-      <br />
-      <form id="routineShoulder" action="">
+      <!-- input date. 배열. 객체 date라는 객체 안에 객체형식으로 저장해서 불러오기 -->
+      <!-- date라는 객체 이름을 만들어서 그안에 객체 형식으로 값들을 집어넣기 
+      or 어떤 객체 안에 date라는 속성을 집어넣고 그밑에 하위 목록 띄우기 -->
+      <!-- 배열 빈칸 설정하고 푸쉬로 안에다 내용 집어넣기 -->
+      <!-- 생성자 함수나 객체 만들어서 내용 추가하기 -->
+      <!-- 텍스트에 문자열과 숫자 입력후 parseInt 변환? -->
+      <form id="routineShoulder" class="none" action="">
         <label for="">스미스머신 숄더프레스</label>
         <input type="number" min="0" /> kg <br />
         <label for="">덤벨 숄더프레스</label>
@@ -63,5 +67,6 @@
         <input type="number" min="0" /> kg
       </form>
     </main>
+    <script src="./js/운동일지.js"></script>
   </body>
 </html>

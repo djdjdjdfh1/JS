@@ -6,6 +6,7 @@
     justify-content: space-around;
 }
 .workout>.chest,.back,.shoulder {
+    margin: 0;
     display: inline-block;
     text-align: center;
     background-color: lightgray;

@@ -55,6 +55,13 @@
       <li>이벤트가 적용된 태그입니다</li>
     </ul>
 
+    <!-- 이벤트 리스너를 통해 함수를 전달할 때 인수값을 직접 전달 -->
+    <!-- 각 DOM의 innerHTML 값을 함수의 인수값으로 넣어줌 -->
+    <!-- 클릭이벤트가 발생했을때, innerHTML값이 바뀌는 함수 -->
+    <p id="p5">5번째 태그</p>
+    <p id="p6">6번째 태그</p>
+    <p id="p7">7번째 태그</p>
+
     <script>
       // HTML 태그에서 이벤트가 발생했을 때 실행할 내용 작성
       // 함수로 만들어서 onclick 이벤트에 전달
@@ -160,10 +167,30 @@
       h3.addEventListener("click", changeColor);
       h3.addEventListener("dblclick", changeColor);
 
-      let ul = document.querySelectorAll("#ullist2>li");
-      for (let i in ul) {
-        ul[i].addEventListener("click", changeColor);
-        ul[i].addEventListener("dblclick", changeColor);
+      let liAll = document.querySelectorAll("#ullist2>li");
+      for (let i = 0; i < liAll.length; i++) {
+        liAll[i].addEventListener("click", changeColor);
+        liAll[i].addEventListener("dblclick", changeColor);
+      }
+
+      // 이벤트 리스너에 작성하는 함수에 인수 값을 넣어서 사용
+      const p5 = document.querySelector("#p5");
+      const p6 = document.querySelector("#p6");
+      const p7 = document.querySelector("#p7");
+
+      // 함수를 넣어줄때 그 이름만 넣어주거나, 익명함수로만 작성
+      // 함수의 인수가 필요하다면 익명함수 안에 함수호출해서 사용
+      p5.addEventListener("click", function (e) {
+        printInnerHTML(e, "내용을 바꿉니다");
+      });
+      p6.addEventListener("click", function (e) {
+        printInnerHTML(e, "다시 수정하여 작성합니다");
+      });
+      p7.addEventListener("click", function (e) {
+        printInnerHTML(e, "글자가 수정이 완료되었습니다");
+      });
+      function printInnerHTML(e, string) {
+        e.target.innerHTML = string;
       }
     </script>
   </body>
