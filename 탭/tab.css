@@ -11,7 +11,7 @@ a { text-decoration: none; color: black;}
 /* tab_menu의 li들을 나열 */
 .tab_menu .list {
     display: flex;
-    height: 170px;
+    height: 300px;
 }
 /* a버튼 */
 .tab_menu .list li .btn {
@@ -31,10 +31,11 @@ a { text-decoration: none; color: black;}
     left: 0; /* 지금은 tab하나로만 구현이라 사용 */
     margin-left: 10px; /* 감싸고있는 margin값 추가 */
     width: 500px;
-    height: 150px;
     background-color: gray;
     box-sizing: border-box; /* 그냥 패딩값 주면 박스크기 변화 */
     padding: 10px;
+    /* 높이를 설정해서 고정시켜버리면 안의 내용이 추가되어도 배경이 담지 못함 */
+    min-height: 150px;
 }
 /* 버튼을 눌렀을때 보이는 화면 */
 .tab_menu .list li.on .content {
