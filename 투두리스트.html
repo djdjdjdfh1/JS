@@ -12,40 +12,7 @@
       <input type="submit" value="전송"></input>
     </form>
     <ul id="todolist"></ul>
-    <script>
-      const memo = document.querySelector("#todo");
-      const form = document.querySelector("form");
-      const todoList = document.querySelector("#todolist");
-      const ToDos = [];   
-
-        function deleteTodo (e) {
-            e.target.parentNode.remove();
-        }
-        function save () {
-        localStorage.setItem("todos", JSON.stringify(ToDos));
-        //let a = JSON.parse(localStorage.getItem(ToDos));
-        //consoel.log(a);
-        }
-
-    function add (e) {
-        e.preventDefault();
-        const newToDo = memo.value;
-        memo.value = "";
-        let li = document.createElement("li");
-        let span = document.createElement("span");
-        let button = document.createElement("button");
-        span.innerText = newToDo;
-        button.innerText = "X";
-        todoList.appendChild(li);
-        li.appendChild(span);
-        li.appendChild(button); 
-        button.addEventListener("click", deleteTodo)
-        ToDos.push(newToDo);
-        save()
-    }
-        form.addEventListener("submit",add)
-
-        
+    <script src="./js/투두리스트.js">  
     </script>
   </body>
 </html>

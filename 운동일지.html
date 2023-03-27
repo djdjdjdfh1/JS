@@ -23,50 +23,84 @@
       <!-- 마진오토가 안먹힘 -->
       <h3>오늘의 운동</h3>
       <!-- 네모칸은 같은위치에, 텍스트는 왼쪽정렬하고싶음 -->
-      <form id="routineChest" class="none" action="">
-        <label for="">벤치프레스</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">덤벨프레스</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">인클라인 덤벨프레스</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">펙덱플라이</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">트라이셉스 케이블</label>
-        <input type="number" min="0" /> kg
-      </form>
+      <div class="workout-box">
+        <form id="routineChest" class="none" action="">
+          <div>
+            <label for="">벤치프레스</label>
+            <input type="number" min="0" />kg <br />
+          </div>
+          <div>
+            <label for="">덤벨프레스</label>
+            <input type="number" min="0" />kg <br />
+          </div>
+          <div>
+            <label for="">인클라인 덤벨프레스</label>
+            <input type="number" min="0" />kg <br />
+          </div>
+          <div>
+            <label for="">펙덱플라이</label>
+            <input type="number" min="0" />kg <br />
+          </div>
+          <div>
+            <label for="">트라이셉스 케이블</label>
+            <input type="number" min="0" />kg
+          </div>
+        </form>
 
-      <form id="routineBack" class="none" action="">
-        <label for="">데드리프트</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">투암로우</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">렛풀다운</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">시티드로우 머신</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">바벨로우 머신</label>
-        <input type="number" min="0" /> kg
-      </form>
-      <!-- input date. 배열. 객체 date라는 객체 안에 객체형식으로 저장해서 불러오기 -->
-      <!-- date라는 객체 이름을 만들어서 그안에 객체 형식으로 값들을 집어넣기 
+        <form id="routineBack" class="none" action="">
+          <label for="">데드리프트</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">투암로우</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">렛풀다운</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">시티드로우 머신</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">바벨로우 머신</label>
+          <input type="number" min="0" /> kg
+        </form>
+        <!-- input date. 배열. 객체 date라는 객체 안에 객체형식으로 저장해서 불러오기 -->
+        <!-- date라는 객체 이름을 만들어서 그안에 객체 형식으로 값들을 집어넣기 
       or 어떤 객체 안에 date라는 속성을 집어넣고 그밑에 하위 목록 띄우기 -->
-      <!-- 배열 빈칸 설정하고 푸쉬로 안에다 내용 집어넣기 -->
-      <!-- 생성자 함수나 객체 만들어서 내용 추가하기 -->
-      <!-- 텍스트에 문자열과 숫자 입력후 parseInt 변환? -->
-      <form id="routineShoulder" class="none" action="">
-        <label for="">스미스머신 숄더프레스</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">덤벨 숄더프레스</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">레터럴 레이즈</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">벤트오버 레터럴 레이즈</label>
-        <input type="number" min="0" /> kg <br />
-        <label for="">숄더 프레스</label>
-        <input type="number" min="0" /> kg
-      </form>
+        <!-- 배열 빈칸 설정하고 푸쉬로 안에다 내용 집어넣기 -->
+        <!-- 생성자 함수나 객체 만들어서 내용 추가하기 -->
+        <!-- 텍스트에 문자열과 숫자 입력후 parseInt 변환? -->
+        <form id="routineShoulder" class="none" action="">
+          <label for="">스미스머신 숄더프레스</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">덤벨 숄더프레스</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">레터럴 레이즈</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">벤트오버 레터럴 레이즈</label>
+          <input type="number" min="0" /> kg <br />
+          <label for="">숄더 프레스</label>
+          <input type="number" min="0" /> kg
+        </form>
+      </div>
     </main>
     <script src="./js/운동일지.js"></script>
   </body>
+  <script>
+    let workOut1 = [...workout];
+    workOut1.push("바벨프레스");
+
+    function workOut(...workout) {
+      this.workout1 = workout1;
+      this.workout2 = workout2;
+      this.workout3 = workout3;
+    }
+    let workOutList = [
+      new workOut(workout1, workout2, workout3, date),
+      new workOut(workout1, workout2, workout3),
+      new workOut(workout1, workout2, workout3),
+    ];
+    // this.date = new Date() 이런값을 넣어서 날짜를 어떤형식으로 바꾸던지간에 인식하기 쉽게 저장한다
+    // 나중에 값을 불러올떄 for문을 돌려서
+    /*for(let i =0; i<~~; i++) {
+      대충 이런식으로 뭐 돌려서
+      if(this.date="0321") 이런 형식일때 그 값을 다 불러오는걸로 해야할것이다.
+      그리고 배열 추가하는거는 array.push("value")를 통해서 값을 넣어준다.
+    }*/
+  </script>
 </html>
